@@ -1,3 +1,17 @@
-<p-table>
-  
+<p-table [value]="tempTableDatas" [paginator]="true" [rows]="1" [lazy]="true" (onLazyLoad)="setTempTableData($event)"  [totalRecords]="3">
+  <ng-template pTemplate="header" >
+    <tr>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>Age</th>
+    </tr>
+</ng-template>
+<ng-template pTemplate="body" let-data>
+    <tr>
+        <td>{{ data.name }}</td>
+        <td>{{ data.dob }}</td>
+        <td>{{ data.age }}</td>
+    </tr>
+</ng-template>
+
 </p-table>
